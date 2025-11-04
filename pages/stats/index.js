@@ -1,5 +1,5 @@
 // pages/stats/index.js
-import * as echarts from '../../components/ec-canvas/echarts';
+import * as echarts from '../../utils/echarts';
 
 // 模拟数据：济南各景点游客数据（按年）
 const scenicData = {
@@ -47,6 +47,7 @@ Page({
     years: [2023, 2024, 2025],
     selectedYear: 2025,
     ecPie: {
+      echarts: echarts,
       onInit: function (canvas, width, height, dpr) {
         pieChart = echarts.init(canvas, null, {
           width: width,
@@ -58,6 +59,7 @@ Page({
       }
     },
     ecLine: {
+      echarts: echarts,
       onInit: function (canvas, width, height, dpr) {
         lineChart = echarts.init(canvas, null, {
           width: width,
