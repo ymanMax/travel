@@ -1,0 +1,21 @@
+<!--pages/rcmmd_route/index.wxml-->
+<view class="container">
+  <!-- 顶部模块 -->
+  <view class="top_box">
+    <van-dropdown-menu active-color="#e64340">
+        <van-dropdown-item value="{{ activeIndex }}" options="{{ areaOptions }}" bind:change="onAreaChange"></van-dropdown-item>
+        <van-dropdown-item value="{{ activeIndex1 }}" options="{{ tagOptions }}" bind:change="onTagChange"></van-dropdown-item>
+    </van-dropdown-menu>
+  </view>
+
+  <!-- 列表模块 -->
+  <view class="route-list" wx:if="{{ routeList.length }}">
+    <block wx:for="{{routeList}}" wx:key="index">
+      <view class="route-item" catchtap="pageSkip" data-arg="{{ item }}">
+        <image class="route-image" src="{{ imgHost }}{{item.image}}" mode="aspectFill"></image>
+        <view class="route-title">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+  <van-empty description="暂无精品路线" wx:else />
+</view>

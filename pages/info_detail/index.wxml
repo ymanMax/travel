@@ -1,0 +1,55 @@
+<view class="issueDetail">
+  <view wx:if="{{ detailType == '0' }}">
+    <view class="position_r">
+      <image class="width_100" src="{{ imgHost }}{{ rowData.image }}" mode="widthFix"/>
+      <view class="title">{{ rowData.name }}</view>
+      <view class="position_a bg_color_white" style="border-radius: 50%;top: 30rpx;right: 30rpx;background: #e64340;padding: 8rpx;" catchtap="toPhone">
+        <van-icon size="22" color="#ffffff" name="phone" />
+      </view>
+    </view>
+    <view style="padding: 24rpx 24rpx 0;">
+      <view class="f_size_17 f_weight_bold">开放时间：</view>
+      <view class="f_size_15" style="padding: 18rpx 0 50rpx;">{{ rowData.openHours }}</view>
+      <view class="f_size_17 f_weight_bold">景区地址：</view>
+      <view class="f_size_15" style="padding: 18rpx 0 50rpx;">{{ rowData.address }}</view>
+      <view class="f_size_17 f_weight_bold">景区简介：</view>
+      <view class="f_size_15" style="padding: 18rpx 0 50rpx;">{{ rowData.description }}</view>
+      <view class="f_size_17 f_weight_bold">景区详情：</view>
+    </view>
+  </view>
+  <view wx:if="{{ detailType == '1' }}">
+    <view class="position_r">
+      <image class="width_100" src="{{ imgHost }}{{ rowData.image }}" mode="widthFix"/>
+      <view class="title">{{ rowData.name }}</view>
+    </view>
+    <view style="padding: 24rpx 24rpx 0;">
+      <view class="f_size_17 f_weight_bold">简介：</view>
+      <view class="f_size_15" style="padding: 40rpx 0;">{{ rowData.description }}</view>
+      <view class="f_size_17 f_weight_bold" style="padding-top: 60rpx;">详情：</view>
+    </view>
+  </view>
+  <view wx:if="{{ detailType == '2' }}">
+    <view class="position_r">
+      <image class="width_100" src="{{ imgHost }}{{ rowData.image }}" mode="widthFix"/>
+      <view class="title">{{ rowData.name }}</view>
+    </view>
+    <view style="padding: 24rpx 24rpx 0;">
+      <view class="f_size_17 f_weight_bold">简介：</view>
+      <view class="f_size_15" style="padding: 40rpx 0;">{{ rowData.description }}</view>
+      <view class="f_size_17 f_weight_bold" style="padding-top: 60rpx;">详情：</view>
+    </view>
+  </view>
+  <view class="answer flex1 overflow_a">
+    <view class="detail">
+      <towxml nodes="{{ dataInfo }}" />
+    </view>
+  </view>
+  <view wx:if="{{ detailType == '0' && priceAdult > 0 }}" class="position_f buy flex align-items-center" catch:tap="toPay">
+    <text>线上购票</text>
+    <text>：￥{{ priceAdult }}</text>
+  </view>
+  <view wx:if="{{ detailType == '0' && priceAdult == 0 }}" class="position_f buy">免费</view>
+  <view wx:if="{{ detailType == '1' }}" class="position_a bg_color_white" style="border-radius: 50%;top: 30rpx;right: 30rpx;background: #e64340;padding: 8rpx;" catchtap="toPhone">
+    <van-icon size="22" color="#ffffff" name="phone" />
+  </view>
+</view>

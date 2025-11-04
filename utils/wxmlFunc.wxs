@@ -1,0 +1,29 @@
+module.exports = {
+    //  筛选状态
+    indexOf: function (arr, value) {
+        var status = ''
+        for (var item=0;item<arr.length;item++) {
+            if (arr[item].dictValue == value) {
+                status = arr[item].dictLabel
+            }
+        }
+        return status
+    },
+    // 格式化时间
+    formatTime: function (date) {
+        var temp = date.split('')
+        temp.splice(4, 0, '-')
+        temp.splice(7, 0, '-')
+        temp.splice(10, 0, ' ')
+        temp.splice(13, 0, ':')
+        temp.splice(16, 0, ':')
+        return temp.join('')
+    },
+    formatPhone: function (tel) {
+        return tel.slice(0, 3) + '****' + tel.slice(-4, )
+    },
+    // 格式化日期
+    dealDate: function (date) {
+        return date.split('-').join('.')
+    },
+};

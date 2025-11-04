@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "订单列表",
+  "usingComponents": {
+    "van-popup": "@vant/weapp/popup/index",
+    "drawQrcode":"/components/common/drawQrcode/index"
+  }
+}

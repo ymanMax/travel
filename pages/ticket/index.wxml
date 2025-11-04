@@ -1,0 +1,35 @@
+<view class="container bg_color_white">
+  <!-- <view style="box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);overflow: hidden;">
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
+  </view> -->
+  <view class="f_size_18 f_weight_bold align_left" style="padding: 24rpx 24rpx 0;">热门景点</view>
+  <!-- 轮播图 -->
+  <swiper class="swiper" interval="3000" indicator-dots wx:if="{{ swiperList.length }}">
+    <block wx:for="{{swiperList}}" wx:key="id">
+      <swiper-item class="swiper_box position_r">
+        <image src="{{ imgHost }}{{item.image}}" mode="aspectFill" class="swiper-img" bind:tap="navigateToDetail" data-id="{{item.id}}" />
+        <view class="swiper_descp position_a beyondHidden">{{ item.description }}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <van-empty description="暂无景点" wx:else />
+  <view class="top_box">
+    <van-dropdown-menu active-color="#e64340">
+      <van-dropdown-item value="{{ activeIndex }}" options="{{ areaOptions }}" bind:change="onAreaChange"></van-dropdown-item>
+      <van-dropdown-item value="{{ activeIndex1 }}" options="{{ tagOptions }}" bind:change="onTagChange"></van-dropdown-item>
+    </van-dropdown-menu>
+  </view>
+  <!-- 列表模块 -->
+  <view class="waterfall-container" wx:if="{{ listData.length }}">
+    <block wx:for="{{listData}}" wx:key="index">
+      <view class="strategy-item" bind:tap="navigateToDetail" data-id="{{item.id}}">
+        <image class="strategy-image" src="{{ imgHost }}{{item.image}}" mode="aspectFill"></image>
+        <view class="flex1" style="margin-left: 24rpx;">
+          <view class="strategy-title f_size_16">{{item.name}}</view>
+          <view class="strategy-description">{{item.description}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <van-empty description="暂无景点" wx:else />
+</view>

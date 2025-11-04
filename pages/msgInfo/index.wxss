@@ -1,0 +1,22 @@
+.order_box{
+  height: 100vh;
+  background-color: #f7f8f9;
+}
+.order_item{
+  padding: 24rpx;
+  font-size: 28rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.order_item:active{
+  opacity: .6;
+}
+.order_item:last-child{
+  margin-bottom: 0;
+}
+.order_status0{
+  color: #e64340;
+}
+.order_status1{
+  color: #0bc960;
+}

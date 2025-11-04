@@ -1,0 +1,341 @@
+/**global page style**/
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
+  background: #f9f9f9;
+}
+page,view,image,input {
+  display: block;
+  box-sizing: border-box;
+}
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  width: 38rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  color: #fff;
+  font-size: 20rpx;
+  text-align: center;
+  background-color: #e64340;
+  border: 1rpx solid #fff;
+  border-radius: 50%;
+}
+.block-btn {
+  padding: 0 32rpx;
+}
+input{
+  font-size: 28rpx; 
+  color: #000000;
+}
+
+image{
+  display: block;
+}
+
+/* position */
+.auto{
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.position_f{
+  position: fixed;
+}
+
+.position_a{
+  position: absolute;
+}
+
+.position_r{
+  position:relative;
+}
+
+/* 宽度100% */
+.width_100{
+  width: 100%;
+}
+
+/* 高度100% */
+.height_100{
+  height: 100%;
+}
+
+/* 蒙层 style */
+.mask{
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top:0;
+  background: rgba(0, 0, 0, 0.64);
+}
+
+/*font size*/
+.f_weight_600{
+  font-weight:600; 
+}
+.f_weight_bold{
+  font-weight: bold;
+}
+.f_size_6 {
+  font-size: 12rpx;
+}
+.f_size_7 {
+  font-size: 14rpx;
+}
+.f_size_8 {
+  font-size: 16rpx;
+}
+.f_size_9 {
+  font-size:18rpx;
+}
+.f_size_10 {
+  font-size: 20rpx;
+}
+
+.f_size_11 {
+  font-size: 22rpx;
+}
+.f_size_12 {
+  font-size: 24rpx;
+}
+.f_size_13 {
+  font-size: 26rpx;
+}
+
+.f_size_14 {
+  font-size: 28rpx;
+}
+
+.f_size_15 {
+  font-size: 30rpx;
+}
+.f_size_16 {
+  font-size: 32rpx;
+}
+
+.f_size_17 {
+  font-size: 34rpx;
+}
+
+.f_size_18 {
+  font-size: 36rpx;
+}
+.f_size_19 {
+  font-size: 38rpx;
+}
+.f_size_20 {
+  font-size: 40rpx;
+}
+
+.f_size_22 {
+  font-size: 44rpx;
+}
+.f_size_24{
+  font-size: 48rpx;
+}
+.f_size_25{
+  font-size: 50rpx;
+}
+.f_size_26{
+  font-size: 52rpx;
+}
+.f_size_27{
+  font-size: 54rpx;
+}
+.f_size_28{
+  font-size: 56rpx;
+}
+.f_size_29{
+  font-size: 58rpx;
+}
+.f_size_30{
+  font-size: 60rpx;
+}
+.f_size_40 {
+  font-size: 80rpx;
+}
+
+.f_size_60{
+font-size: 120rpx;
+}
+
+/*font color*/
+.f_color_theme {
+  color: #e64340;
+}
+
+.f_color_white {
+  color: #ffffff;
+}
+
+.f_color_black {
+  color: #000000;
+}
+
+.f_color_999 {
+  color: #999999;
+}
+
+.f_color_grey {
+  color: #F2F2F2;
+}
+
+.f_color_placeholder {
+  color: #999999;
+}
+
+/*backgroud color*/
+.bg_color_theme {
+  background-color: #3D73DD;
+}
+
+.bg_color_white {
+  background-color: #ffffff;
+}
+
+/* font align */
+.align_left {
+  text-align: left;
+}
+
+.align_right {
+  text-align: right;
+}
+
+.align_center {
+  text-align: center;
+}
+
+/*display*/
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+
+/* flex */
+.flex1{
+  flex: 1;
+}
+.flex{
+  display: flex;
+}
+.flex-wrap{
+  flex-wrap:wrap;
+}
+.flex-row{
+  flex-direction: row;
+}
+.flex-row-reverse{
+  flex-direction: row-reverse;
+}
+.flex-column{
+flex-direction: column;
+}
+.flex-column-reverse{
+  flex-direction: column-reverse;
+}
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+.align-content-center{
+  align-content: center;
+}
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+.align-items-baseline{
+  align-items: baseline;
+}
+
+/* 透明度 */
+.opacity0{
+  opacity: 0;
+}
+.opacity1{
+  opacity: 0.1;
+}
+.opacity2{
+  opacity: 0.2;
+}
+.opacity3{
+  opacity: 0.3;
+}
+.opacity4{
+  opacity: 0.4;
+}
+.opacity5{
+  opacity: 0.5;
+}
+.opacity6{
+  opacity: 0.6;
+}
+.opacity7{
+  opacity: 0.7;
+}
+.opacity8{
+  opacity: 0.8;
+}
+.opacity9{
+  opacity: 0.9;
+}
+
+.overflow_h{
+  overflow: hidden;
+}
+
+.overflow_a{
+  overflow: auto;
+}
+
+/* 三角形 */
+.triangle{
+  vertical-align: middle;
+  display: inline-block;
+  border-top:6rpx solid transparent;
+  border-left:6rpx solid #2782D7; 
+  border-right:6rpx solid transparent; 
+  border-bottom:6rpx solid transparent;   
+}
+
+/* 单行超出部分隐藏 */
+.beyondHidden{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

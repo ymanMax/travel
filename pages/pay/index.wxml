@@ -1,0 +1,25 @@
+<view class="pay_ok" wx:if="{{ isComplete }}">
+    <image src="/images/success.png" mode="widthFix" style="width: 40%; margin: 30% auto 40rpx;"/>
+    <view class="align_center f_size_17 f_weight_bold" style="color: #4a4a4a;">下单成功</view>
+    <view class="align_center f_size_12" style="color: #4a4a4a;margin: 20rpx auto 80rpx;">请在有效期内核销~</view>
+    <view class="flex justify-content-center">
+        <van-button class="btn1" size="normal" type="primary" bind:click="backHome" color="#0bc960">返回首页</van-button>
+    </view>
+</view>
+<view class="pay" wx:else>
+    <view class="align_center f_weight_bold" style="margin-top: 30%">
+        <text>￥</text>
+        <text class="f_size_30">{{ orderInfo.price }}</text>
+    </view>
+    <view class="align_center f_size_13" style="margin: 18rpx 0 100rpx;color: #666;">订单编号 - {{ orderInfo.orderNo }}</view>
+    <view class="info flex align-items-center justify-content-between">
+        <view class="flex align-items-center">
+            <van-icon size="28" name="wechat-pay" color="#16d46b" />
+            <view class="f_size_15 f_weight_bold" style="margin-left: 18rpx;">微信支付</view>
+        </view>
+        <van-icon size="18" name="checked" color="#ffca28" />
+    </view>
+    <view class="btn">
+        <van-button type="primary" block bind:click="submit" color="#0bc960">立即支付</van-button>
+    </view>
+</view>

@@ -1,0 +1,37 @@
+.container {
+  background: #f9f9f9;
+}
+.top_box {
+  border-top: 1px solid #f9f9f9;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.route-list {
+  margin: 24rpx;
+}
+
+.route-item {
+  overflow: hidden;
+  border-radius: 12rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.route-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.route-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 12rpx 24rpx;
+}
+
+.custom-class .van-dropdown-menu__title {
+  color: #e64340 !important;
+}

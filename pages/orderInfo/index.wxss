@@ -1,0 +1,72 @@
+page{
+  height: 100%;
+}
+.order_box{
+  height: 100%;
+  overflow: auto;
+  background-color: #f7f8f9;
+}
+.order_item{
+  padding: 0 24rpx;
+  font-size: 28rpx;
+  margin-top: 12rpx;
+  background-color: #fff;
+}
+.ope_btn{
+  bottom: 20rpx;
+  right: 30rpx;
+  background: #e64340;
+  color: #fff;
+  padding: 6rpx 20rpx;
+  border-radius: 80rpx;
+  font-size: 24rpx;
+}
+.ope_btn1{
+  background: #0bc960;
+}
+.order_item:active{
+  opacity: .6;
+}
+.order_item:last-child{
+  margin-bottom: 0;
+}
+.order_status3{
+  color: #e64340;
+}
+.order_status2{
+  color: #888888;
+}
+.order_status1{
+  color: #0bc960;
+}
+.order_status0{
+  color: #f18832;
+}
+
+.stage_qr{
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.main_content{
+  margin: 34rpx;
+  padding: 60rpx 80rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  position: relative;
+  z-index: 99;
+}
+.title_img{
+  width: 70%;
+  margin: 0 auto;
+}
+.code_box{
+  padding: 80rpx 0;
+}
+.title_qr{
+  font-size: 34rpx;
+  text-align: center;
+  margin-bottom: 50rpx;
+  font-weight: bold;
+  color: #e64340;
+}

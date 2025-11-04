@@ -1,0 +1,4 @@
+
+  <canvas  type="2d" style="width:{{options.width}}rpx; height: {{options.height}}rpx; margin: 0 auto;" class="myQrcode" id="myQrcode"></canvas>
+
+

@@ -1,0 +1,215 @@
+.userInfo{
+  background: #f7f8f9;
+}
+.userinfo, .uploader, .tunnel {  
+  /* height: 140rpx; */
+  width: 100%;    
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
+}
+
+.userinfo {
+  padding-left: 120rpx;
+}
+
+.userinfo-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+.userinfo-avatar-img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.login-btn {
+  width: 400rpx;
+  margin: auto;
+  margin-top: 32rpx;
+}
+.my-box{
+  margin-bottom: 12rpx;
+}
+.my-box .head-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 32rpx;
+}
+.head-bar-left {
+  display: flex;
+  align-items: center;
+}
+.my-box .head-bar .head{
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 50%;
+}
+.my-box .head-bar .name-box{
+  width: 400rpx;
+  height: 100rpx;
+  margin: 0 20rpx;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.my-box .head-bar .name-box .state{
+  height: 40rpx;
+  width: 100rpx;
+  background-color: #999;
+  margin-top: 5rpx;
+  font-size: 25rpx;
+  color: #ffffff;
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 20rpx;
+}
+.user-code {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.user-code .txt {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.coupon-box{
+  display: flex;
+  justify-content: center;
+  margin-top:32rpx ;
+}
+.coupon-box .coupon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.coupon-box .coupon .title1{
+  font-size: 25rpx;
+}
+.coupon-box .coupon .num{
+  font-size: 42rpx;
+}
+.coupon-box .balance-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 88rpx;
+}
+.coupon-box .balance-box .amount-box{
+  display: flex;
+  align-items: flex-end;
+}
+.coupon-box .balance-box .amount{
+  font-size: 25rpx;
+}
+.coupon-box .balance-box .amount-box .amount1{
+  font-size: 26rpx;
+  margin-right: 5rpx;
+}
+.coupon-box .balance-box .amount-box .amount2{
+  font-size: 42rpx;
+}
+.my-bar1{
+  margin-top: 12rpx;
+}
+.my-bar1 .box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50rpx ;
+}
+.my-bar1 .box .box-0{
+  display: flex;
+  align-items: center;
+}
+.my-bar1 .box .box-0 .icon{
+  width: 60rpx;
+  height: 60rpx;
+}
+.my-bar1 .box .box-0 .title{
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+
+.my-bar1 .box .go{
+  height: 45rpx;
+  width: 45rpx;
+
+}
+.version {
+  text-align: center;
+  margin: 64rpx;
+  color: #666;
+  font-size: 26rpx;
+}
+button{
+  padding: 0;
+  width: 160rpx;
+  height: 160rpx;
+  background-color: #fff !important;
+  margin: 80rpx auto;
+}
+button::after{
+  border: 0;
+  z-index: -1;
+  background: #fff;
+  position: relative;
+}
+.avatar{
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+  border: 1px solid #ddd;
+}
+.input{
+  width: 50%;
+  height: 50rpx;
+  margin: 0 auto;
+  padding: 0 24rpx;
+  border-radius: 8rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border: 1px solid #aaa;
+}
+.my-bar {
+  color: #fff;
+  font-size: 30rpx;
+  position: relative;
+  background: linear-gradient(to top, #f7d9d9 0%, #ee413e 70%, #e64340 100%);
+}
+.order-box{
+  color: #777;
+  padding: 16rpx 24rpx;
+  background: #fff;
+  margin-top: 12rpx;
+  border-bottom: 1px solid #ddd;
+}
+.order-box1{
+  margin-top: 0;
+  padding: 24rpx 0;
+}
+.edit_box{
+  top: 50%;
+  font-size: 24rpx;
+  right: 30rpx;
+  display: flex;
+  align-items: center;
+  padding: 10rpx 30rpx;
+  position: absolute;
+  border-radius: 100rpx;
+  border: 1px solid #fff;
+  transform: translate(0, -50%);
+}

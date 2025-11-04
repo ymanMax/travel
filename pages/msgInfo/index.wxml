@@ -1,0 +1,8 @@
+<view wx:if="{{ msgList.length }}" class="order_box">
+  <view class="order_item" wx:for="{{ msgList }}" wx:key="index" bind:tap="toDetail" data-arg="{{item}}">
+    <view class="f_size_15 f_weight_bold">{{ item.title }}</view>
+    <view class="f_size_13" style="color: #666;margin-top: 12rpx;">{{ item.content }}</view>
+  </view>
+  <view class="align_center f_size_10" style="margin: 8rpx;color: #999;">-到底啦-</view>
+</view>
+<van-empty wx:else description="暂无消息" />

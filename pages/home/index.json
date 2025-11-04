@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "van-empty": "@vant/weapp/empty/index"
+  }
+}

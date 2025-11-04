@@ -1,0 +1,23 @@
+page{
+    height: 100%;
+    background: #f7f8f9;
+}
+.pay{
+    height: 100%;
+}
+.pay_ok{
+    height: 100%;
+    border-top: 1px solid #fff;
+    background: #fff;
+}
+.info{
+    padding: 18rpx 30rpx;
+    background-color: #fff;
+}
+.btn {
+    padding: 0 32rpx;
+    margin-top: 30%;
+}
+.btn1 .van-button{
+    height: 64rpx !important;
+}

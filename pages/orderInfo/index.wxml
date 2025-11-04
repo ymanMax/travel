@@ -1,0 +1,52 @@
+<wxs src="/utils/wxmlFunc.wxs" module="tools"></wxs>
+
+<view class="height_100 bg_color_white">
+  <view wx:if="{{ orderList.length }}" class="order_box">
+    <view class="order_item position_r" wx:for="{{ orderList }}" wx:key="index">
+      <view class="flex justify-content-between align-items-center" style="color: #555;padding: 18rpx 0;border-bottom: 1px solid #ddd;">
+        <view class="flex align-items-center">
+          <view>订单号：</view>
+          <view>{{ item.orderNo }}</view>
+        </view>
+      <view class="order_status{{item.payStatus}}">{{ tools.indexOf(kindList, item.payStatus) }}</view>
+      </view>
+      <view class="f_size_12" style="padding: 24rpx 0;color: #757575;">
+        <view class="flex justify-content-between">
+          <view class="flex align-items-center">
+            <image src="{{ imgHost }}{{ item.scenicModel.image }}" style="width: 160rpx;margin-right: 24rpx;" mode="widthFix"/>
+          <view>
+            <view class="f_size_14 f_weight_bold" style="color: #000;">{{ item.scenicModel.name }}</view>
+            <view style="margin-top: 12rpx;">{{ item.orderTm }}</view>
+          </view>
+          </view>
+          <view class="f_size_18" style="color: #e64340;">￥{{ item.price }}</view>
+        </view>
+      </view>
+      <view class="ope_btn position_a" bind:tap="toDetail" data-arg="{{item}}" wx:if="{{ item.payStatus == 0 }}">去支付</view>
+      <view class="ope_btn ope_btn1 position_a" bind:tap="onShowQr" data-arg="{{item}}" wx:if="{{ item.payStatus == 1 }}">去核销</view>
+      <!-- <view class="flex f_size_13 justify-content-end" style="color: #555;padding: 18rpx 0;border-top: 1px solid #ddd;" wx:if="{{ item.payStatus == 1 || item.payStatus == 2 }}">
+        <view catch:tap="cancelOrder" data-arg="{{ item }}" style="color: #555;padding: 6rpx 12rpx;border: 1px solid #999;border-radius: 4rpx;">取消订单</view>
+      </view> -->
+    </view>
+    <view class="align_center f_size_10" style="margin: 8rpx auto;color: #999;background: #f7f8f9;">-到底啦-</view>
+  </view>
+  <van-empty wx:else description="暂无订单" />
+</view>
+
+<drawQrcode bindOutQR="OutQR" is_outQR="{{ true }}" style="position: fixed; left: 99999px;" options="{{options}}"></drawQrcode>
+
+<!-- 弹窗 -->
+<van-popup show="{{ showQr }}"
+  bind:close="handlePopup"
+  position="bottom"
+  closeable
+  close-on-click-overlay="{{ false }}"
+  custom-style="height: 50%;"
+  bind:close="onCloseQr">
+  <view class="stage_qr">
+    <view class="code_box">
+      <image style="background:#fff;width: 400rpx;height: 400rpx;margin: 0 auto" src="{{qrUrl}}" mode=""/>
+    </view>
+    <view class="title_qr">扫描二维码进行核销</view>
+  </view>
+</van-popup>

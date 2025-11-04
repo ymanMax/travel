@@ -1,0 +1,29 @@
+<wxs src="/utils/wxmlFunc.wxs" module="tools"></wxs>
+
+<view class="container">
+  <scroll-view scroll-y="true" class="scroll-view" bindscrolltolower="onReachBottom" wx:if="{{ commentList.length }}">
+    <block wx:for="{{commentList}}" wx:key="index">
+      <view class="post-item position_r">
+        <view class="post-header">
+          <image class="avatar" src="{{imgHost}}{{item.headPortraitLink}}" />
+          <view class="info">
+            <view class="nickname">{{item.nickName || '官方'}}</view>
+            <view class="date">{{item.date}}</view>
+          </view>
+        </view>
+        <view class="description">{{item.traStrategyModel.name}}</view>
+        <view class="images">
+          <block wx:for="{{item.imgList}}" wx:for-item="itm" wx:key="index">
+            <image class="image image{{ item.imgWidth }}" src="{{imgHost}}{{itm}}" catch:tap="previewImg" data-url="{{ itm }}" mode="{{item.imgWidth ? 'widthFix' : ''}}" />
+          </block>
+        </view>
+        <view class="action-buttons position_a">
+          <view bindtap="deleteItem" data-arg="{{item}}" class="button flex align-items-center">
+            <van-icon name="star" size="30" color="#e64340" />
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <van-empty description="暂无收藏" wx:else />
+</view>

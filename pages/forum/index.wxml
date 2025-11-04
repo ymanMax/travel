@@ -1,0 +1,65 @@
+<wxs src="/utils/wxmlFunc.wxs" module="tools"></wxs>
+
+<view class="container">
+  <view class="position_f create_box" bindtap="createComment">
+    <view style="margin-right:8rpx">发表</view>
+    <van-icon name="add-o" />
+  </view>
+  <scroll-view scroll-y="true" class="scroll-view" bindscrolltolower="onReachBottom" wx:if="{{ commentList.length }}">
+    <block wx:for="{{commentList}}" wx:key="index">
+      <view class="post-item">
+        <view class="post-header">
+          <image class="avatar" src="{{imgHost}}{{item.appletUserModel.headPortraitLink}}" />
+          <view class="info">
+            <view class="nickname">{{item.appletUserModel.nickName || '官方'}}</view>
+            <view class="date">{{item.date}}</view>
+          </view>
+        </view>
+        <view class="f_weight_bold f_size_16">{{item.name}}</view>
+        <view class="description" wx:if="{{ item.content }}">
+          <textarea value="{{item.content}}" maxlength="500" disabled auto-height="{{ item.isOpen }}" style="width: 100%;height: {{ item.isOpen ? 'auto' : '300px' }};" />
+          <view class="align_right" style="color: #e64340;" catch:tap="handleOpen" data-index="{{ index }}">{{ item.isOpen ? '收起' : '展开' }}</view>
+        </view>
+        <view class="images">
+          <block wx:for="{{item.imgList}}" wx:for-item="itm" wx:key="index">
+            <image class="image image{{ item.imgWidth }}" src="{{imgHost}}{{itm}}" catch:tap="previewImg" data-url="{{ itm }}" mode="{{item.imgWidth ? 'widthFix' : ''}}" />
+          </block>
+        </view>
+        <view class="action-buttons">
+          <view bindtap="handleLike" data-arg="{{item}}" data-type="0" class="button flex align-items-center">
+            <van-icon name="star" color="#e64340" wx:if="{{ item.isCollect }}" />
+            <van-icon name="star-o" color="#e64340" wx:else />
+          </view>
+          <view bindtap="handleLike" data-arg="{{item}}" data-type="1" class="button flex align-items-center">
+            <van-icon name="like" color="#e64340" wx:if="{{ item.isLike }}" />
+            <van-icon name="like-o" color="#e64340" wx:else />
+            <text style="margin-left: 4rpx;">{{item.likeNum}}</text>
+          </view>
+          <view bindtap="showCommentInput" data-arg="{{ {item} }}" class="button">
+            <van-icon name="chat-o" />
+          </view>
+        </view>
+        <view class="f_size_12" style="color: #777;">
+          <view wx:for="{{ item.userCommentModelList }}" wx:key="index" wx:for-item="itm">
+            <view class="f_size_12" style="color: rgb(3, 79, 167);" bindtap="showCommentInput1" data-arg="{{ { item, itm } }}">
+              <text>{{ itm.userName }}</text>
+              <text style="color: #000;" wx:if="{{ itm.toUserName }}">回复</text>
+              <text wx:if="{{ itm.toUserName }}">{{ itm.toUserName }}</text>
+              <text>：{{ itm.content }}</text>
+            </view>
+          </view>
+        </view>
+        <!-- 评论输入框和提交按钮 -->
+        <view wx:if="{{isCommentInputVisible && currentComment.item.id === item.id}}" class="comment-input-container">
+          <textarea class="input_value" type="text" bindinput="bindKeyInput" maxlength="150" value="{{ comment }}" placeholder="输入评论..." placeholder-style="font-size:28rpx">
+          </textarea>
+          <view>
+            <button style="background: #bbb;" type="primary" bindtap="cancelComment">取消</button>
+            <button type="primary" bindtap="submitComment">评论</button>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <van-empty description="暂无论坛" wx:else />
+</view>

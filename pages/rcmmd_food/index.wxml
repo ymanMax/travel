@@ -1,0 +1,24 @@
+<view class="container">
+  <!-- 顶部模块 -->
+  <scroll-view scroll-x="true" class="tag-container">
+    <block wx:for="{{tagOptions}}" wx:key="index">
+      <view class="tag-item {{activeIndex == item.dictValue ? 'tag-selected' : ''}}" bindtap="selectTag" data-tag="{{item.dictValue}}">
+        {{item.dictLabel}}
+      </view>
+    </block>
+  </scroll-view>
+
+  <!-- 列表模块 -->
+  <view class="waterfall-container" wx:if="{{ foodList.length }}">
+    <block wx:for="{{foodList}}" wx:key="index">
+      <view class="strategy-item" catchtap="pageSkip" data-arg="{{ item }}">
+        <image class="strategy-image" src="{{imgHost}}{{item.image}}"></image>
+        <view class="flex1">
+          <view class="f_size_14 f_weight_bold">{{item.name}}</view>
+          <view class="strategy-description">{{item.description}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <van-empty description="暂无精品路线" wx:else />
+</view>

@@ -1,0 +1,21 @@
+<view class="container">
+  <!-- 顶部模块 -->
+  <scroll-view scroll-x="true" class="tag-container">
+    <block wx:for="{{areaOptions}}" wx:key="index">
+      <view class="tag-item {{activeIndex == item.value ? 'tag-selected' : ''}}" bindtap="selectTag" data-tag="{{item.value}}">
+        {{item.text}}
+      </view>
+    </block>
+  </scroll-view>
+
+  <!-- 列表模块 -->
+  <view class="waterfall-container" wx:if="{{ swiperList.length }}">
+    <block wx:for="{{listData}}" wx:key="index">
+      <view class="strategy-item">
+        <image class="strategy-image" src="{{item.image}}" mode="widthFix"></image>
+        <view class="strategy-description">{{item.description}}</view>
+      </view>
+    </block>
+  </view>
+  <van-empty description="暂无攻略" wx:else />
+</view>

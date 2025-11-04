@@ -1,0 +1,21 @@
+<view class="userInfo">
+  <view class="flex align-items-center my-bar" style="padding: 60rpx 30rpx;">
+    <image src="{{ avatarUrl ? avatarUrl : '/images/default.png' }}" mode="aspectFill" class="userinfo-avatar-img"></image>
+    <view class="name-box" style="margin-left: 30rpx;">
+      <view class="f_weight_bold f_size_18" wx:if="{{nickName}}">{{nickName}}</view>
+      <view class="f_weight_bold f_size_12" wx:if="{{userNo}}" style="margin-top: 12rpx;">编号：{{userNo}}</view>
+      <view class="f_weight_bold" wx:else bindtap="editnickName">编辑资料</view>
+      <view wx:if="{{nickName}}" bindtap="editnickName" class="edit_box">
+        <view bindtap="editnickName">编辑资料</view>
+        <van-icon name="edit" />
+      </view>
+    </view>
+  </view>
+  <view class="my-bar1">
+    <view class="flex align-items-center" style="background: #fff;border-bottom: 1px solid #ddd;padding: 0 32rpx;" wx:for="{{ menuList }}" wx:key="index">
+      <van-icon size="18" name="{{ item.icon }}" color="#333" />
+      <button wx:if="{{ item.url }}" style="flex:1;margin: 0 12rpx;font-size: 30rpx;height: 96rpx;line-height: 96rpx;text-align: left;" bind:tap="pageSkip" data-arg="{{ item }}">{{ item.descp }}</button>
+      <button wx:else style="flex:1;margin: 0 12rpx;font-size: 30rpx;height: 96rpx;line-height: 96rpx;text-align: left;" open-type="contact">{{ item.descp }}</button>
+    </view>
+  </view>
+</view>

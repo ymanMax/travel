@@ -1,0 +1,45 @@
+<!-- pages/post/post.wxml -->
+<view class="container">
+  <view class="form-container">
+    <!-- 标题输入框 -->
+    <view class="form-item">
+      <label class="form-label">标题：</label>
+      <input class="input-field" placeholder="请输入标题" bindinput="onTitleInput" value="{{title}}" placeholder-style="font-size:28rpx"/>
+    </view>
+
+    <!-- 景点下拉框 -->
+    <view class="form-item">
+      <label class="form-label">景点：</label>
+      <picker mode="selector" range="{{scenicSpots}}" value="{{selectedSpotIndex}}" range-key="name" bindchange="onSpotChange">
+        <view class="picker-text" wx:if="{{ selectedSpotIndex != '' }}">
+          {{scenicSpots[selectedSpotIndex].name}}
+        </view>
+        <view class="picker-text no_val" wx:else>请选择景点</view>
+      </picker>
+    </view>
+
+    <!-- 描述文本域 -->
+    <view class="form-item">
+      <label class="form-label">描述：</label>
+      <textarea class="textarea-field" placeholder="请输入描述内容" maxlength="500" bindinput="onDescriptionInput" value="{{description}}" auto-height="true" maxlength="500" placeholder-style="font-size:28rpx" />
+      <view class="word-count">{{description.length}}/500</view>
+    </view>
+    <label class="form-label">图片：</label>
+    <!-- 图片上传区域 -->
+    <view class="image-container">
+      <block wx:for="{{images}}" wx:key="index">
+        <view class="image-wrapper">
+          <image src="{{item}}" class="preview-image" mode="aspectFill" />
+          <view class="delete-icon" bindtap="deleteImage" data-index="{{index}}">×</view>
+        </view>
+      </block>
+      <view class="add-btn" bindtap="chooseImage" wx:if="{{images.length < 9}}">
+        <text>+</text>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 发布按钮 -->
+  <view class="submit-btn align_center" bindtap="submitPost" disabled="{{!content && images.length === 0}}">发表</view>
+</view>

@@ -1,0 +1,62 @@
+<block>
+  <view class="flex justify-content-between f_size_12 f_weight_bold"
+    style="color: #333;padding: 0 32rpx;line-height: 84rpx;border-bottom: 1px solid #ddd;">
+    <view>订单编号</view>
+    <view>{{ orderInfo.orderNo }}</view>
+  </view>
+  <van-card
+    wx:for="{{orderInfo.orderDishesModels}}" wx:key="index"
+    num="{{ item.dishesNum }}"
+    price="{{ item.dishesPrice }}"
+    title="{{ item.dishesModel.name }}"
+    thumb="https://xiaoxiaofeng.com/restaurant-reservation{{ item.dishesModel.img }}"
+    centered>
+    <view slot="num" style="text-align:right;" wx:if="{{ !orderInfo.payStatus }}">
+      <van-button size="mini">按钮</van-button>
+      <van-button size="mini">按钮</van-button>
+      <van-stepper value="{{ item.dishesNum }}" min="0" step="1" async-change disable-input data-idx="{{index}}" bind:change="cartStepChange" />
+    </view>
+  </van-card>
+  <view class="flex justify-content-between f_size_12 f_weight_bold"
+    style="color: #333;padding: 0 32rpx;line-height: 84rpx;border-bottom: 1px solid #ddd;">
+    <view>预约人</view>
+    <view>{{ orderInfo.reservationName }}</view>
+  </view>
+  <view class="flex justify-content-between f_size_12 f_weight_bold"
+    style="color: #333;padding: 0 32rpx;line-height: 84rpx;border-bottom: 1px solid #ddd;">
+    <view>预留电话</view>
+    <view>{{ orderInfo.reservationPhone }}</view>
+  </view>
+  <view class="flex justify-content-between f_size_12 f_weight_bold"
+    style="color: #333;padding: 0 32rpx;line-height: 84rpx;border-bottom: 1px solid #ddd;">
+    <view>预约时间</view>
+    <view>{{ orderInfo.orderTm }}</view>
+  </view>
+  <view class="flex justify-content-between f_size_12 f_weight_bold" wx:if="{{ orderInfo.remark }}"
+    style="color: #333;padding: 0 32rpx;line-height: 84rpx;border-bottom: 1px solid #ddd;">
+    <view>备注</view>
+    <view class="flex1 align_right" style="padding-left: 24rpx;">{{ orderInfo.remark }}</view>
+  </view>
+  <view class="flex justify-content-between f_size_12 f_weight_bold" wx:if="{{ orderInfo.rejectReason }}"
+    style="color: #333;padding: 0 32rpx;line-height: 84rpx;border-bottom: 1px solid #ddd;">
+    <view>拒绝原因</view>
+    <view class="flex1 align_right" style="padding-left: 24rpx;color: red;">{{ orderInfo.rejectReason }}</view>
+  </view>
+  <view class="flex justify-content-between f_size_12 f_weight_bold"
+    style="color: #333;padding: 0 32rpx;line-height: 84rpx;border-bottom: 1px solid #ddd;">
+    <view>订单状态</view>
+    <view class="flex1 align_right order_status" style="padding-left: 24rpx;">{{ orderStatus }}</view>
+  </view>
+  <view class="flex justify-content-between f_size_12 f_weight_bold"
+    style="color: #333;padding: 0 32rpx;line-height: 84rpx;border-bottom: 1px solid #ddd;">
+    <view>共计</view>
+    <view class="f_size_16 flex1 align_right order_status" style="padding-left: 24rpx;">￥{{ orderInfo.totalPrice }}</view>
+  </view>
+  <view class="bottom"></view>
+  <van-submit-bar price="{{ orderInfo.depositPrice*100 }}"
+    tip="{{ orderInfo.reservationStatus < 2 }}"
+    label="定金 "
+    button-text="{{ orderInfo.payStatus ? '确定' : '立即支付' }}" bindtap="goCreateOrder">
+    <view slot="tip" wx:if="{{ orderInfo.reservationStatus < 2 }}">小王中餐厅有很多特色菜品，<text style="color: blue;" catch:tap="addMore">去点菜</text></view>
+  </van-submit-bar>
+</block>

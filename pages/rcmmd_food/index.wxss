@@ -1,0 +1,57 @@
+.container {
+  padding: 24rpx;
+}
+
+.tag-container {
+  display: flex;
+  overflow-x: auto; /* 允许水平滚动 */
+  white-space: nowrap; /* 防止标签换行 */
+  margin-bottom: 24rpx;
+  padding-right: 24rpx; /* 保持最后一个标签距右的 margin */
+  -webkit-overflow-scrolling: touch; /* 使滚动更平滑（针对 iOS） */
+}
+
+.tag-item {
+  font-size: 28rpx;
+  display: inline-block; /* 或者可以使用 flex 项，取决于您的布局需求 */
+  padding: 8rpx 24rpx;
+  margin-right: 24rpx;
+  background-color: #f0f0f0;
+  border-radius: 10rpx;
+  white-space: nowrap; /* 防止标签内容换行 */
+  cursor: pointer; /* 添加鼠标指针样式，表示可点击 */
+}
+
+.tag-selected {
+  background-color: #e64340;
+  color: white;
+}
+
+.waterfall-container {
+  border-radius: 10rpx;
+}
+
+.strategy-item {
+  display: flex;
+  padding: 12rpx;
+  background: #fff;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+.strategy-image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 10rpx;
+  object-fit: fill;
+}
+
+.strategy-description {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 12rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}

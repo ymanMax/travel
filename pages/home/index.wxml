@@ -1,0 +1,65 @@
+<!-- 轮播图 -->
+<swiper class="swiper" autoplay interval="3000" circular>
+    <block wx:for="{{swiperList}}" wx:key="id">
+        <swiper-item>
+            <image src="{{item.img}}" mode="widthFix" class="swiper-img" data-url="/pages/detail/detail?id={{item.id}}" />
+        </swiper-item>
+    </block>
+</swiper>
+
+<!-- 快捷入口 -->
+<view class="quick-entry">
+    <block wx:for="{{quickEntries}}" wx:key="id">
+        <view class="entry-item flex flex-column align-items-center justify-content-center" catch:tap="pageSkip" data-arg="{{item}}">
+            <image src="{{item.icon}}" mode="aspectFit" class="entry-icon" style="width: 60rpx;" />
+            <text class="entry-text">{{item.title}}</text>
+        </view>
+    </block>
+</view>
+
+<!-- 打卡圣地 -->
+<view class="f_size_17 f_weight_bold" style="padding: 24rpx;" wx:if="{{ hotData.length }}">打卡圣地</view>
+
+<!-- 双列图文 -->
+<view class="double-column" wx:if="{{ hotData.length }}">
+    <!-- 左侧大图 -->
+    <view class="big-column position_r" bind:tap="navigateToDetail" data-id="{{ hotData[0].id }}">
+        <image src="{{ imgHost }}{{hotData[0].image}}" mode="aspectFill" class="column-img" />
+        <view class="img-desc">{{hotData[0].name}}</view>
+    </view>
+
+    <!-- 右侧小图 -->
+    <view class="small-column flex-column flex justify-content-between">
+        <view class="small-item position_r" bind:tap="navigateToDetail" data-id="{{ hotData[1].id }}">
+            <image src="{{ imgHost }}{{hotData[1].image}}" mode="aspectFill" class="column-img" />
+            <view class="img-desc">{{hotData[1].name}}</view>
+        </view>
+        <view class="small-item position_r" bind:tap="navigateToDetail" data-id="{{ hotData[2].id }}">
+            <image src="{{ imgHost }}{{hotData[2].image}}" mode="aspectFill" class="column-img" />
+            <view class="img-desc">{{hotData[2].name}}</view>
+        </view>
+    </view>
+</view>
+
+<!-- 标签切换 -->
+<view class="tabs">
+    <block wx:for="{{tabs}}" wx:key="index">
+        <view class="tab-item {{activeTab === index ? 'active' : ''}}" bind:tap="switchTab" data-index="{{index}}">
+            {{item}}
+        </view>
+    </block>
+</view>
+
+<!-- 列表 -->
+<scroll-view scroll-y class="list-container" wx:if="{{ listData.length }}">
+    <block wx:for="{{listData}}" wx:key="id">
+        <view class="list-item" bind:tap="navigateToDetail" data-id="{{ item.id }}">
+            <image src="{{ imgHost }}{{item.image}}" mode="aspectFill" class="item-img" />
+            <view class="item-content">
+                <text class="item-title">{{item.name}}</text>
+                <text class="item-desc">{{item.description}}</text>
+            </view>
+        </view>
+    </block>
+</scroll-view>
+<van-empty description="暂无信息" wx:else />

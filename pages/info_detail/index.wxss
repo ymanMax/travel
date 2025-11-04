@@ -1,0 +1,30 @@
+.issueDetail {
+  background: #fff;
+  padding-bottom: 100rpx;
+}
+
+.buy {
+  right: 30rpx;
+  bottom: 40rpx;
+  color: #ffffff;
+  padding: 12rpx 30rpx;
+  background: #e64340;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.buy:active {
+  opacity: .6;
+}
+
+.title {
+  left: 24rpx;
+  bottom: 24rpx;
+  position: absolute;
+  color: #000;
+  font-weight: bold;
+  border-radius: 10rpx;
+  padding: 6rpx 20rpx;
+  background: #ffffff;
+}

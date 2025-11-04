@@ -1,0 +1,84 @@
+<!-- pages/userinfo/userinfo.wxml -->
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <!-- 头像上传 -->
+    <view class="form-item">
+      <label><text style="color: red;">*</text>头像：</label>
+      <view class="avatar-uploader flex1">
+        <image catchtap="previewImg" data-url="{{ formData.headPortraitLink }}" src="{{formData.headPortraitLink}}" mode="aspectFill" wx:if="{{formData.headPortraitLink}}"/>
+        <button class="upload-btn" bindtap="chooseAvatar" size="mini">
+          {{formData.headPortraitLink ? '更换头像' : '上传头像'}}
+        </button>
+      </view>
+    </view>
+
+    <!-- 昵称输入 -->
+    <view class="form-item">
+      <label><text style="color: red;">*</text>昵称：</label>
+      <input 
+        class="flex1"
+        name="nickName" 
+        type="text" 
+        placeholder="请输入昵称"
+        maxlength="20" 
+        value="{{formData.nickName}}"
+        bindinput="bindInput"
+      />
+    </view>
+
+    <!-- 性别选择 -->
+    <view class="form-item" style="padding: 0 0 0 30rpx;">
+      <label>性别：</label>
+      <radio-group class="flex1" name="sex" bindchange="radioChange">
+        <label wx:for="{{genders}}" wx:key="value">
+          <radio value="{{item.value}}" checked="{{item.value == formData.sex}}"/> {{item.name}}
+        </label>
+      </radio-group>
+    </view>
+
+    <!-- 生日选择 -->
+    <view class="form-item">
+      <label>生日：</label>
+      <picker
+        class="flex1"
+        name="birthday" 
+        mode="date" 
+        value="{{formData.birthday}}"
+        bindchange="bindDateChange"
+      >
+        <view class="picker" wx:if="{{ formData.birthday }}">{{formData.birthday}}</view>
+        <view class="picker no_val" wx:else>选择日期</view>
+      </picker>
+    </view>
+
+    <!-- 联系方式 -->
+    <view class="form-item">
+      <label>电话：</label>
+      <input 
+        class="flex1"
+        name="phone" 
+        type="number" 
+        placeholder="请输入手机号"
+        maxlength="11" 
+        value="{{formData.phone}}"
+        bindinput="bindInput"
+      />
+    </view>
+
+    <!-- 电子邮箱 -->
+    <view class="form-item">
+      <label>邮箱：</label>
+      <input 
+        class="flex1"
+        name="email" 
+        type="email" 
+        placeholder="请输入邮箱"
+        value="{{formData.email}}"
+        bindinput="bindInput"
+      />
+    </view>
+
+    <!-- 提交按钮 -->
+    <button form-type="submit" type="primary" class="submit-btn">提交信息</button>
+  </form>
+</view>

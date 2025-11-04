@@ -1,0 +1,19 @@
+page{
+  padding-bottom: 120rpx;
+}
+.bottom {
+  height: 120rpx;
+}
+.small_price .van-card__content{
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 50rpx !important;
+}
+.van-card{
+  border-bottom: 1px solid #efefef;
+  background-color: #fff !important;
+}
+.order_status{
+  color: #e64340;
+}
