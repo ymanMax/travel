@@ -1,0 +1,102 @@
+/* pages/stats/index.wxss */
+.stats-container {
+  min-height: 100vh;
+  background-color: #f5f7fa;
+  padding: 20rpx;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin: 30rpx 0;
+}
+
+.filter-section {
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.08);
+}
+
+.filter-label {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 16rpx;
+}
+
+.year-picker {
+  border: 2rpx solid #e8e8e8;
+  border-radius: 12rpx;
+  padding: 16rpx;
+  background-color: #fafafa;
+}
+
+.picker-content {
+  font-size: 28rpx;
+  color: #1890ff;
+  text-align: center;
+}
+
+.chart-section {
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.08);
+}
+
+.chart-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+/* 图表容器样式 */
+.ec-canvas {
+  width: 100%;
+  height: 400rpx;
+}
+
+/* 适配不同屏幕尺寸 */
+@media (min-width: 750rpx) {
+  .stats-container {
+    padding: 40rpx;
+  }
+  
+  .ec-canvas {
+    height: 500rpx;
+  }
+}
+
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+  .stats-container {
+    background-color: #1a1a1a;
+  }
+  
+  .page-title,
+  .filter-label,
+  .chart-title {
+    color: #fff;
+  }
+  
+  .filter-section,
+  .chart-section {
+    background-color: #262626;
+    box-shadow: 0 2rpx 12rpx rgba(255, 255, 255, 0.1);
+  }
+  
+  .year-picker {
+    background-color: #333;
+    border-color: #404040;
+  }
+  
+  .picker-content {
+    color: #4CAF50;
+  }
+}

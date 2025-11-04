@@ -1,0 +1,25 @@
+<!--pages/stats/index.wxml-->
+<view class="stats-container">
+  <!-- 页面标题 -->
+  <view class="page-title">济南景点游客统计</view>
+
+  <!-- 筛选区域 -->
+  <view class="filter-section">
+    <view class="filter-label">选择年份</view>
+    <picker class="year-picker" mode="selector" range="{{years}}" bindchange="onYearChange">
+      <view class="picker-content">{{selectedYear}}年</view>
+    </picker>
+  </view>
+
+  <!-- 饼图区域 - 景点游客比例 -->
+  <view class="chart-section">
+    <view class="chart-title">各景点游客比例</view>
+    <ec-canvas id="pie-chart" canvas-id="pie-chart" ec="{{ecPie}}"></ec-canvas>
+  </view>
+
+  <!-- 折线图区域 - 月度人流量 -->
+  <view class="chart-section">
+    <view class="chart-title">各月份游客流量</view>
+    <ec-canvas id="line-chart" canvas-id="line-chart" ec="{{ecLine}}"></ec-canvas>
+  </view>
+</view>
