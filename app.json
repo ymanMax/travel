@@ -17,7 +17,8 @@
     "pages/orderDetail/index",
     "pages/msgInfo/index",
     "pages/pay/index",
-    "pages/userInfo/index"
+    "pages/userInfo/index",
+    "pages/verify_order/index"
   ],
   "permission": {
     "scope.userLocation": {

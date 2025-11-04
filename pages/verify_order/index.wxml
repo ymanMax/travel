@@ -1,0 +1,63 @@
+<!--pages/verify_order/index.wxml-->
+<view class="verify-container">
+  <!-- 页面标题 -->
+  <view class="page-title">订单核销</view>
+  
+  <!-- 二维码展示区域 -->
+  <view class="qrcode-section">
+    <view class="qrcode-title">请出示此二维码进行核销</view>
+    <view class="qrcode-container">
+      <canvas id="qrcode" style="width: 400rpx; height: 400rpx;"></canvas>
+    </view>
+    <view class="order-no">订单号: {{orderNo}}</view>
+  </view>
+  
+  <!-- 订单信息区域 -->
+  <view class="info-section">
+    <view class="info-title">门票信息</view>
+    
+    <view class="info-item">
+      <view class="info-label">景点名称</view>
+      <view class="info-value">{{ticketInfo.scenicName}}</view>
+    </view>
+    
+    <view class="info-item">
+      <view class="info-label">门票类型</view>
+      <view class="info-value">{{ticketInfo.ticketType}}</view>
+    </view>
+    
+    <view class="info-item">
+      <view class="info-label">门票价格</view>
+      <view class="info-value">¥{{ticketInfo.ticketPrice}}</view>
+    </view>
+    
+    <view class="info-item">
+      <view class="info-label">有效日期</view>
+      <view class="info-value">{{ticketInfo.validDate}}</view>
+    </view>
+    
+    <view class="info-item">
+      <view class="info-label">游客姓名</view>
+      <view class="info-value">{{ticketInfo.visitorName}}</view>
+    </view>
+    
+    <view class="info-item">
+      <view class="info-label">游客手机</view>
+      <view class="info-value">{{ticketInfo.visitorPhone}}</view>
+    </view>
+    
+    <view class="info-item">
+      <view class="info-label">订单状态</view>
+      <view class="info-value status-{{ticketInfo.status === '已核销' ? 'success' : 'pending'}}">
+        {{ticketInfo.status}}
+      </view>
+    </view>
+  </view>
+  
+  <!-- 核销按钮区域 -->
+  <view class="action-section">
+    <button class="verify-btn" type="primary" size="default">
+      确认核销
+    </button>
+  </view>
+</view>

@@ -1,0 +1,120 @@
+/* pages/verify_order/index.wxss */
+.verify-container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* 页面标题 */
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40rpx;
+  color: #333;
+}
+
+/* 二维码区域 */
+.qrcode-section {
+  background-color: #fff;
+  padding: 40rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.qrcode-title {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 30rpx;
+}
+
+.qrcode-container {
+  width: 400rpx;
+  height: 400rpx;
+  margin: 0 auto 20rpx;
+  background-color: #fff;
+  padding: 20rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.order-no {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 20rpx;
+}
+
+/* 信息区域 */
+.info-section {
+  background-color: #fff;
+  padding: 30rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 40rpx;
+}
+
+.info-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30rpx;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 26rpx;
+  color: #666;
+  width: 200rpx;
+}
+
+.info-value {
+  font-size: 26rpx;
+  color: #333;
+  font-weight: 500;
+  flex: 1;
+  text-align: right;
+}
+
+/* 状态样式 */
+.status-success {
+  color: #52c41a;
+}
+
+.status-pending {
+  color: #fa8c16;
+}
+
+/* 按钮区域 */
+.action-section {
+  padding: 0 20rpx 40rpx;
+}
+
+.verify-btn {
+  width: 100%;
+  height: 80rpx;
+  font-size: 30rpx;
+  border-radius: 40rpx;
+  background-color: #1989fa;
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verify-btn::after {
+  border: none;
+}
